@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#Description: SonarQube Installtion
+#Author: Brice, Feb 2022
+
++echo "update launched..."
++sudo yum update -y
++sleep 1
++echo "installation in progress..."
++sudo yum install java-11-openjdk-devel -y
+sleep 1 
++sudo yum install java-11-openjdk -y
++cd /opt
++sudo yum install wget -y
++sudo unzip /opt/sonarqube-9.3.0.51899.zip
++sleep 1
++sudo yum install wget -y
++sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.3.0.51899.zip
++sudo unzip /opt/sonarqube-9.3.0.51899.zip
++sleep 1
++yum install unzip
++eco "installtion still in progress..."
+sleep 2
++sudo unzip /opt/sonarqube-9.3.0.51899.zip
++sudo chown -R vagrant:vagrant /opt/sonarqube-9.3.0.51899
++cd /opt/sonarqube-9.3.0.51899/bin/linux-x86-64
++./sonar.sh start
++sleep 1
++eco "installation was successful .."
++echo "Ip address below"
++sudo ifconfig | grep 192
+
